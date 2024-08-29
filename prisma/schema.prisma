@@ -21,7 +21,8 @@ model Measure {
   measureDatetime DateTime
   measureType String?
   hasConfirmed Boolean @default(false)
-  imageUrl String  
+  imageUrl String
+  measureValue Float  
   
   customer Customer @relation(fields: [customerId], references: [id])
 
