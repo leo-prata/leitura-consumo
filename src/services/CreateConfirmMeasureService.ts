@@ -1,4 +1,3 @@
-import e from 'express';
 import prismaClient from '../prisma';
 
 interface ConfirmMeasureRequest{
