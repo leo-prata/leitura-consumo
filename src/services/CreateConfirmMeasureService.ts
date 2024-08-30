@@ -1,4 +1,4 @@
-import prismaClient from '../prisma';
+import prismaClient, { Measure } from '../prisma';
 
 interface ConfirmMeasureRequest{
     measure_uuid: string;
@@ -6,7 +6,7 @@ interface ConfirmMeasureRequest{
 }
 
 class CreateConfirmMeasureService {
-  public async execute({ measure_uuid, confirmed_value }: ConfirmMeasureRequest) {
+  public async execute({ measure_uuid, confirmed_value }: ConfirmMeasureRequest): Promise<Measure> {
     
     if (!measure_uuid || typeof measure_uuid !== 'string') {
         throw new Error("INVALID_DATA: Measure UUID is required and must be a string");

@@ -20,7 +20,7 @@ async function uploadImageToGoogle(imagePath: string): Promise<string> {
 }
 
 class CreateMeasureController {
-  public async handle(request: Request, response: Response){
+  public async handle(request: Request, response: Response): Promise<Response> {
     const { image, customer_code, measure_datetime, measure_type } = request.body;
 
     if (!image || !customer_code || !measure_datetime || !measure_type) {
