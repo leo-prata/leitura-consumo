@@ -11,6 +11,8 @@ services:
       - .env
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/databasemeasure  
     command: >
       sh -c "npx prisma migrate deploy"  
 
